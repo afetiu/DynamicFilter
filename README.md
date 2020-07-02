@@ -1,6 +1,6 @@
 # DynamicFilter
 
-A lightweight .NET library for filtering data. Purposed to be used mostly to filter datatables
+A lightweight .NET Core library for filtering data. Purposed to be used mostly to filter datatables
 
 How To Use:
 
