@@ -1,8 +1,10 @@
 ﻿using DynamicFilter;
-using DynamicFilterCore;
+//using DynamicFilterCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
+using UtilsCore.DynamicFilter;
 
 namespace ConsoleApp1
 {
@@ -10,7 +12,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //Console.WriteLine("Hello World!");
 
             var Goals = new List<Goal>
             {
@@ -20,39 +22,37 @@ namespace ConsoleApp1
             };
 
 
-            var filters = new List<Item>
-            {
-                new Item
-                {
-                    Value = "hello",
-                    Property = "Title",
-                    Operator = OperatorName.Contains
-                },
+            //var filters = new List<Item>
+            //{
 
-                  new Item
-                {
-                    Value = 1,
-                    IsList = true,
-                    Property = "Projects.Id",
-                    Operator = OperatorName.Equal
-                }
-            };
+            //      new Item
+            //    {
+            //        Value = 1,
+            //        //IsList = true,
+            //        Property = "Id",
+            //        Operator = OperatorName.Equal
+            //    }
+            //};
 
-            var filter = new Filter
-            {
-                Skip = 0,
-                Take = 10
-            };
+            //var filter = new Filter
+            //{
+            //    Skip = 0,
+            //    Take = 10
+            //};
 
-            filter.Items = new List<Item>();
-            filter.Items.AddRange(filters);
+            //filter.Items = new List<Item>();
+            //filter.Items.AddRange(filters);
 
-            var test = Goals.Filter(filter);
-            var data = test.Data.FirstOrDefault();
+            //FilteredData<Goal> test = Goals.Filter(filter);
+            //var data = test.Data.FirstOrDefault();
 
 
         }
+         
+
     }
+
+
     public class Goal
     {
         public int Id { get; set; }
@@ -61,6 +61,24 @@ namespace ConsoleApp1
         public DateTime Date { get; set; }
         public bool Active { get; set; }
         public List<Project> Projects { get; set; }
+
+        public int score = 0;
+        public int speed = 30;
+        public int level = 1;
+        public int step = 100; 
+        public int target = 100;
+
+        public void HitElementChecker(int score)
+        {
+            if (score >= target)
+            {
+                target += step; 
+                level++;
+                speed += 3;
+            } 
+        }
+
+       
     }
 
     public class Project

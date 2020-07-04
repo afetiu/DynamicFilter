@@ -1,13 +1,13 @@
 ﻿using DynamicFilterCore;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Dynamic.Core;
+using System.Linq.Dynamic.Core; 
 
 namespace DynamicFilter
 {
     public static class ExtensionMethods
     {
-        public static FilteredData<T> Filter<T>(this IQueryable<T> query, Filter filter, LogicalOperation logicalOperation = LogicalOperation.And, string orderByField = "Id", OrderingDirection orderingDirection = OrderingDirection.Descending)
+        public static FilteredData<T> Filter<T>(this IEnumerable<T> query, Filter filter, LogicalOperation logicalOperation = LogicalOperation.And, string orderByField = "Id", OrderingDirection orderingDirection = OrderingDirection.Descending)
         {
             var predicate = BuildQuery(filter.Items, logicalOperation);
             query = string.IsNullOrEmpty(predicate) ? query : query.AsQueryable().Where(predicate);
