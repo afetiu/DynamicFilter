@@ -33,13 +33,9 @@ Example:
 // create Filter
 
 Filter filter = new Filter
-
 {
-
 Skip = 0,
-
 Take = 10
-
 }
 
 
@@ -48,27 +44,18 @@ Take = 10
 List<item> items = new List<item>();
 	
 items.add(new Item
-
 {
-
 Property = "LastName",
-
 Value = "Smith",
-
 Operator = OperatorName.Equal
-
 });
 
 
 //use filtering for an entity coming from database
-
-
 FilteredData<User> users = db.Users.Filter(filter);
 	
 //get data and count
-
 var rows = users.Data;
-
 var count = users.Count; 
 
 
