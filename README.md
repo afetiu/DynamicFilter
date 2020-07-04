@@ -31,6 +31,7 @@ Example:
 
 
 // Filter json
+
 {
 Skip: 0,
 Take: 10,
@@ -42,6 +43,7 @@ Items: [{
 }
 
 //use filtering for an entity coming from database
+
 FilteredData<User> users = db.Users.Filter(filter);
 	
 //get data and count
