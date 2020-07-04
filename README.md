@@ -55,6 +55,7 @@ Operator = OperatorName.Equal
 FilteredData<User> users = db.Users.Filter(filter);
 	
 //get data and count
+
 var rows = users.Data;
 var count = users.Count; 
 
