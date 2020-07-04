@@ -8,24 +8,24 @@ Filter() method is used as extension method for IEnumerable<> or IQueryable<> an
 
 Filter class contains these properties:
 
-Skip (number of items to skip)
+- Skip (number of items to skip)
 
-Take (number of items to take)
+- Take (number of items to take)
 
-Items (a list of type Item)
+- Items (a list of type Item)
 
 Item class contains these properties:
 
 
-Property (name of property to be used for filtering)
+- Property (name of property to be used for filtering)
 
-Value (value of the property)
+- Value (value of the property)
 
-IsList (set to true when filtering a property which is a list, ex: User.Roles)
+- IsList (set to true when filtering a property which is a list, ex: User.Roles)
 
-Exclude ( if you want that property not to be used in filtering)
+- Exclude (set to true if you want that property not to be used in filtering)
 
-Operator (equal, greater, less, etc)
+- Operator (equal, greater, less, etc)
 
 Example:
 
