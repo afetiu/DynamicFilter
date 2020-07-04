@@ -30,26 +30,16 @@ Item class contains these properties:
 Example:
 
 
-// create Filter
-
-Filter filter = new Filter
+// Filter json
 {
-Skip = 0,
-Take = 10
+Skip: 0,
+Take: 10,
+Items: [{
+		Property: "LastName",
+		Value: "Smith",
+		Operator: OperatorName.Equal
+	}]
 }
-
-
-//create filter items
-
-List<item> items = new List<item>();
-	
-items.add(new Item
-{
-Property = "LastName",
-Value = "Smith",
-Operator = OperatorName.Equal
-});
-
 
 //use filtering for an entity coming from database
 FilteredData<User> users = db.Users.Filter(filter);
